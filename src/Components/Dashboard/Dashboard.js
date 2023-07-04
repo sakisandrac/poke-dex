@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
+import RandomPokemon from '../RandomPokemon/RandomPokemon';
 
 const Dashboard = () => {
 
   const getRandomNum = () => {
     return Math.floor(Math.random() * 100)
-  }
+  };
   
   const [randomPokemon, setRandomPokemon] = useState({
     number: "",
-    data: [],
+    data: {name: "loading"},
     image: ""
-  })
+  });
+
+  const [userName, setUserName] = useState('');
 
   useEffect(() => {
     const num = getRandomNum();
@@ -29,17 +32,22 @@ const Dashboard = () => {
         }
       })
     })
-  }, [])
+  }, []);
+
+  const updateUsernameInput = (e) => {
+    const {value} = e.target;
+    setUserName(value);
+  };
 
   return (
     <div className='dashboard-container'>
-      <h1 className='welcome-msg'>Welcome, Pokemon Trainer!</h1>
-      <main>
-        <div className='random-container'>
-          <section className='random-pokemon'>
-            <img src={randomPokemon.image} />
-          </section>
+        <div className='username-container'>
+          <label className='username-label' htmlFor='username'>Enter Your Name</label>
+          <input className='username-input' type='text' name='username' value={userName} onChange={(e)=> {updateUsernameInput(e)}}></input>
         </div>
+        <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>
+      <main className='main-container'>
+        <RandomPokemon randomPokemon={randomPokemon}/>
       </main>
     </div>
   )

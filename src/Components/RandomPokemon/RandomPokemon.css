@@ -1,0 +1,38 @@
+.random-pokemon-container {
+  border-right: 2px solid #de3519;
+}
+
+.random-pokemon-header {
+  padding: 0 10px;
+}
+
+.pokemon-img {
+  width: 50%;
+}
+
+.pokemon-name {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.abilities-header, .types-header {
+  padding-left: 0;
+  margin: 0;
+}
+
+.abilities-container, .types-container {
+  text-align: left;
+  padding: 0 30px 15px 30px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.btn:hover{
+  background-color: #de3519;
+  cursor: pointer;
+}

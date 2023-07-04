@@ -2,7 +2,6 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import Navigation from './Components/Navigation/Navigation';
 import Dashboard from './Components/Dashboard/Dashboard';
-// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png
 
 function App() {
   return (
