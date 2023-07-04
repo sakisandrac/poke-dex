@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
+import Details from '../Details/Details';
 
 const Dashboard = () => {
 
@@ -11,7 +12,9 @@ const Dashboard = () => {
   const [randomPokemon, setRandomPokemon] = useState({
     number: "",
     data: {name: "loading"},
-    image: ""
+    image: "",
+    clicks: 0,
+    showDetails: false
   });
 
   const [userName, setUserName] = useState('');
@@ -32,7 +35,7 @@ const Dashboard = () => {
         }
       })
     })
-  }, []);
+  }, [randomPokemon.clicks]);
 
   const updateUsernameInput = (e) => {
     const {value} = e.target;
@@ -47,7 +50,8 @@ const Dashboard = () => {
         </div>
         <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>
       <main className='main-container'>
-        <RandomPokemon randomPokemon={randomPokemon}/>
+        <RandomPokemon randomPokemon={randomPokemon}setRandomPokemon={setRandomPokemon}/>
+        {randomPokemon.showDetails && <Details randomPokemon={randomPokemon}/>}
       </main>
     </div>
   )
