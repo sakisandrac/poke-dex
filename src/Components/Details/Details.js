@@ -4,7 +4,7 @@ import './Details.css';
 const Details = ({randomPokemon}) => {
   return (
     <div className='details-container'>
-      <h2>More Details</h2>
+      <h2 className='random-pokemon-header'>More Details</h2>
       <section className='data-container'>
         <p>Base Experience: {randomPokemon.data.base_experience}</p>
         <p>Weight: {randomPokemon.data.weight} kg</p>
