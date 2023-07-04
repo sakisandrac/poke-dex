@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import {Routes, Route} from 'react-router-dom'
+import Navigation from './Components/Navigation/Navigation';
+import Dashboard from './Components/Dashboard/Dashboard';
+// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Navigation />
+     <Dashboard />
     </div>
   );
 }
