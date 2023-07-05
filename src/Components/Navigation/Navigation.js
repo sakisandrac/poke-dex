@@ -8,6 +8,7 @@ const Navigation = () => {
       {/* <img className="logo" src={logo}></img> */}
       <div className="nav-link-container">
         <Link className="nav-link" to="/">Home</Link>
+        <Link className="nav-link" to="/saved">My Pokemon</Link>
       </div>
     </nav>
   )

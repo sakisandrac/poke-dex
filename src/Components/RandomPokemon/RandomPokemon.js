@@ -1,7 +1,17 @@
 import React from 'react';
 import './RandomPokemon.css'
 
-const RandomPokemon = ({randomPokemon, setRandomPokemon}) => {
+const RandomPokemon = ({randomPokemon, setRandomPokemon, savedPokemon, setSavedPokemon}) => {
+
+  const savePokemon = () => {
+    setSavedPokemon(prev => {
+      if(!prev.some(pokemon => pokemon.number === randomPokemon.number)) {
+      return [...prev, randomPokemon]
+      } else {
+        return prev
+      }
+    })
+  }
 
   const capitalizeName = (name) => {
     return `${name.split('')[0].toUpperCase()}${name.substring(1)}`
@@ -47,7 +57,7 @@ const RandomPokemon = ({randomPokemon, setRandomPokemon}) => {
       <div className='button-container'>
         <button className='btn' onClick={showPokemonDetails}>{randomPokemon.showDetails? 'Hide' : 'Show'} More Details</button>
         <button className='btn' onClick={getNewRandomPokemon}>Get Random Pokemon</button>
-        <button className='btn'>Save Pokemon</button>
+        <button className='btn' onClick={savePokemon}>Save Pokemon</button>
       </div>
     </div>
   )

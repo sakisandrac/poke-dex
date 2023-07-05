@@ -3,7 +3,7 @@ import './Dashboard.css';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import Details from '../Details/Details';
 
-const Dashboard = () => {
+const Dashboard = ({savedPokemon, setSavedPokemon}) => {
 
   const getRandomNum = () => {
     return Math.floor(Math.random() * 100)
@@ -50,7 +50,7 @@ const Dashboard = () => {
         </div>
         <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>
       <main className='main-container'>
-        <RandomPokemon randomPokemon={randomPokemon}setRandomPokemon={setRandomPokemon}/>
+        <RandomPokemon setSavedPokemon={setSavedPokemon} savedPokemon={savedPokemon} randomPokemon={randomPokemon} setRandomPokemon={setRandomPokemon}/>
         {randomPokemon.showDetails && <Details randomPokemon={randomPokemon}/>}
       </main>
     </div>
