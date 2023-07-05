@@ -8,6 +8,7 @@ import { useState } from 'react';
 function App() {
 
   const [savedPokemon, setSavedPokemon] = useState([]);
+  const [userName, setUserName] = useState('');
 
   return (
     <>
@@ -15,8 +16,14 @@ function App() {
         <Navigation />
       </div>
       <Routes>
-        <Route path="/" element={<Dashboard setSavedPokemon={setSavedPokemon} savedPokemon={savedPokemon}/>}></Route>
-        <Route path="/saved" element={<SavedPokemon savedPokemon={savedPokemon}/>}></Route>
+        <Route path="/" element={
+          <Dashboard
+            setSavedPokemon={setSavedPokemon} 
+            savedPokemon={savedPokemon}
+            userName={userName}
+            setUserName={setUserName}
+            />} /> 
+        <Route path="/saved" element={<SavedPokemon savedPokemon={savedPokemon}/>} />
       </Routes>
     </>
   );

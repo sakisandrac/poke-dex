@@ -3,7 +3,9 @@ import './Dashboard.css';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import Details from '../Details/Details';
 
-const Dashboard = ({savedPokemon, setSavedPokemon}) => {
+const Dashboard = ({savedPokemon, setSavedPokemon, userName, setUserName}) => {
+
+  const [error, setError] = useState({hasError: false, msg: ''})
 
   const getRandomNum = () => {
     return Math.floor(Math.random() * 100)
@@ -16,8 +18,6 @@ const Dashboard = ({savedPokemon, setSavedPokemon}) => {
     clicks: 0,
     showDetails: false
   });
-
-  const [userName, setUserName] = useState('');
 
   useEffect(() => {
     const num = getRandomNum();
@@ -35,6 +35,15 @@ const Dashboard = ({savedPokemon, setSavedPokemon}) => {
         }
       })
     })
+    .catch(err => {
+      setError(() => {
+        console.log(err)
+        return {
+          hasError: true,
+          msg: err
+        }
+      })
+    })
   }, [randomPokemon.clicks]);
 
   const updateUsernameInput = (e) => {
@@ -48,7 +57,7 @@ const Dashboard = ({savedPokemon, setSavedPokemon}) => {
           <label className='username-label' htmlFor='username'>Enter Your Name</label>
           <input className='username-input' type='text' name='username' value={userName} onChange={(e)=> {updateUsernameInput(e)}}></input>
         </div>
-        <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>
+        {error.hasError? <h1>{`ERROR: please try refreshing browser ${error.msg}`}</h1> : <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>}
       <main className='main-container'>
         <RandomPokemon setSavedPokemon={setSavedPokemon} savedPokemon={savedPokemon} randomPokemon={randomPokemon} setRandomPokemon={setRandomPokemon}/>
         {randomPokemon.showDetails && <Details randomPokemon={randomPokemon}/>}
