@@ -1,8 +1,11 @@
 import React from 'react';
 import './RandomPokemon.css'
+import { getData} from '../../apiCalls';
+import { useEffect } from 'react';
+import { getRandomNum } from '../../utils';
 
 const RandomPokemon = ({randomPokemon, setRandomPokemon, savedPokemon, setSavedPokemon}) => {
-
+  
   const savePokemon = () => {
     setSavedPokemon(prev => {
       if(!prev.some(pokemon => pokemon.number === randomPokemon.number)) {

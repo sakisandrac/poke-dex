@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import Details from '../Details/Details';
-
+import { getData} from '../../apiCalls';
 const Dashboard = ({savedPokemon, setSavedPokemon}) => {
 
   const getRandomNum = () => {
@@ -22,8 +22,7 @@ const Dashboard = ({savedPokemon, setSavedPokemon}) => {
   useEffect(() => {
     const num = getRandomNum();
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${num}/`)
-    .then(res => res.json())
+    getData(num)
     .then(data => {
       console.log(data)
       setRandomPokemon(prev => {
