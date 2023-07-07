@@ -4,9 +4,10 @@ import Navigation from './Components/Navigation/Navigation';
 import Dashboard from './Components/Dashboard/Dashboard';
 import SavedPokemon from './Components/SavedPokemon/SavedPokemon';
 import { useState } from 'react';
-import { getData} from './apiCalls';
+import { getSinglePokemon } from './apiCalls';
 import { getRandomNum } from './utils';
 import { useEffect } from 'react';
+import AllPokemon from './Components/AllPokemon/AllPokemon';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   useEffect(() => {
     const num = getRandomNum();
 
-    getData(num)
+    getSinglePokemon(num)
     .then(data => {
       console.log(data)
       setRandomPokemon(prev => {
@@ -81,6 +82,7 @@ function App() {
         showPokemonDetails={showPokemonDetails}
         />}/>
         <Route path="/saved" element={<SavedPokemon savedPokemon={savedPokemon}/>}/>
+        <Route path="/allPokemon" element={<AllPokemon />}/>
       </Routes>
     </>
   );

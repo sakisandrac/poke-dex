@@ -1,0 +1,27 @@
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.all-pokemon-header {
+  margin-left: 20px;
+}
+
+.all-pokemon {
+  width: 120px;
+  margin: 0 10px;
+}
+
+.search-container {
+  margin: 10px 0 30px 0;
+}
+
+.search-label {
+  font-size: 1.5rem;
+  margin: 20px;
+}
+
+.results-msg {
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
