@@ -1,42 +1,8 @@
 import React from 'react';
 import './RandomPokemon.css'
-import { getData} from '../../apiCalls';
-import { useEffect } from 'react';
-import { getRandomNum } from '../../utils';
+import { capitalizeName } from '../../utils';
 
-const RandomPokemon = ({randomPokemon, setRandomPokemon, savedPokemon, setSavedPokemon}) => {
-  
-  const savePokemon = () => {
-    setSavedPokemon(prev => {
-      if(!prev.some(pokemon => pokemon.number === randomPokemon.number)) {
-      return [...prev, randomPokemon]
-      } else {
-        return prev
-      }
-    })
-  }
-
-  const capitalizeName = (name) => {
-    return `${name.split('')[0].toUpperCase()}${name.substring(1)}`
-  }
-
-  const getNewRandomPokemon = () => {
-    setRandomPokemon(prev => {
-      return {
-        ...prev,
-        clicks: prev.clicks + 1
-      }
-    });
-  }
-
-  const showPokemonDetails = () => {
-    setRandomPokemon(prev => {
-      return {
-        ...prev,
-        showDetails: !prev.showDetails
-      }
-    });
-  }
+const RandomPokemon = ({randomPokemon, getNewRandomPokemon, showPokemonDetails, savePokemon}) => {
 
   return (
     <div className='random-pokemon-container'>

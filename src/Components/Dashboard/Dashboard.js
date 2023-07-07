@@ -1,40 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import Details from '../Details/Details';
-import { getData} from '../../apiCalls';
-const Dashboard = ({savedPokemon, setSavedPokemon}) => {
 
-  const getRandomNum = () => {
-    return Math.floor(Math.random() * 100)
-  };
-  
-  const [randomPokemon, setRandomPokemon] = useState({
-    number: "",
-    data: {name: "loading"},
-    image: "",
-    clicks: 0,
-    showDetails: false
-  });
-
+const Dashboard = ({savedPokemon, savePokemon, randomPokemon, getNewRandomPokemon, showPokemonDetails}) => {
   const [userName, setUserName] = useState('');
-
-  useEffect(() => {
-    const num = getRandomNum();
-
-    getData(num)
-    .then(data => {
-      console.log(data)
-      setRandomPokemon(prev => {
-        return {
-          ...prev,
-          number: num,
-          data: data,
-          image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png`
-        }
-      })
-    })
-  }, [randomPokemon.clicks]);
 
   const updateUsernameInput = (e) => {
     const {value} = e.target;
@@ -49,7 +19,13 @@ const Dashboard = ({savedPokemon, setSavedPokemon}) => {
         </div>
         <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>
       <main className='main-container'>
-        <RandomPokemon setSavedPokemon={setSavedPokemon} savedPokemon={savedPokemon} randomPokemon={randomPokemon} setRandomPokemon={setRandomPokemon}/>
+        <RandomPokemon 
+        savedPokemon={savedPokemon} 
+        randomPokemon={randomPokemon} 
+        getNewRandomPokemon={getNewRandomPokemon}
+        showPokemonDetails={showPokemonDetails}
+        savePokemon={savePokemon}
+        />
         {randomPokemon.showDetails && <Details randomPokemon={randomPokemon}/>}
       </main>
     </div>
