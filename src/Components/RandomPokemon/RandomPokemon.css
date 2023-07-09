@@ -36,6 +36,7 @@
 .abilities-header, .types-header {
   padding-left: 0;
   margin: 0;
+  font-family: 'Lilita One', cursive;
 }
 
 .abilities-container, .types-container {

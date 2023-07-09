@@ -4,6 +4,7 @@
   align-items: center;
   height: 80px;
   box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  font-family: 'Lilita One', cursive;
 }
 
 .nav-link {
@@ -21,6 +22,11 @@
 a:visited {
   color: white;
   text-decoration: none;
+}
+
+a:hover {
+  color: #de3519;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

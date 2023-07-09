@@ -1,11 +1,18 @@
-.saved-container {
+.main-saved-container {
   background-color: #82cce2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.saved-container { 
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
 }
+
 .saved-pokemon {
   max-height: 150px;
   margin: 0 10px;

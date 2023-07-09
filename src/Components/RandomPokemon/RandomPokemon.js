@@ -9,7 +9,7 @@ const RandomPokemon = ({randomPokemon, getNewRandomPokemon, showPokemonDetails, 
       <h2 className='random-pokemon-header'>Discover Random Pokemon:</h2>
       <div className='img-container'>
         <section className='img-pokemon'>
-          <img className='pokemon-img' src={randomPokemon.image} />
+          <img className='pokemon-img' alt={`image of pokemon ${randomPokemon.data.name}`} src={randomPokemon.image} />
         </section>
       </div>
       <section className='data-container'>

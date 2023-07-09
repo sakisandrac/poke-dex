@@ -6,9 +6,10 @@ const SavedPokemon = ({savedPokemon}) => {
 console.log('saved', savedPokemon)
 
   return (
-    <div className='saved-container'>
+    <div className='main-saved-container'>
+       <h1 className='all-pokemon-header'>My Saved Pokemon!</h1>
+       <div className='saved-container'>
       {savedPokemon.map(pokemon => {
-
         return (
             <article key={pokemon.data.name + "b"} className='saved-pokemon'>
               <div key={pokemon.data.name} className='saved-pokemon-header'>
@@ -18,8 +19,8 @@ console.log('saved', savedPokemon)
                 <img key={pokemon.data.name + "a"} src={pokemon.image} />
               </Link>
             </article>
-          
         )})}
+        </div>
     </div>
   )
 }
