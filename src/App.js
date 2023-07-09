@@ -4,10 +4,12 @@ import Navigation from './Components/Navigation/Navigation';
 import Dashboard from './Components/Dashboard/Dashboard';
 import SavedPokemon from './Components/SavedPokemon/SavedPokemon';
 import { useState } from 'react';
-import { getSinglePokemon } from './apiCalls';
+import { getSinglePokemon, getData } from './apiCalls';
 import { getRandomNum } from './utils';
 import { useEffect } from 'react';
 import AllPokemon from './Components/AllPokemon/AllPokemon';
+import SinglePokemon from './Components/SinglePokemon/SinglePokemon';
+
 
 function App() {
 
@@ -38,6 +40,7 @@ function App() {
     })
     .catch(err => console.log("error", err))
   }, [randomPokemon.call]);
+
 
   const savePokemon = () => {
     setSavedPokemon(prev => {
@@ -83,6 +86,7 @@ function App() {
         />}/>
         <Route path="/saved" element={<SavedPokemon savedPokemon={savedPokemon}/>}/>
         <Route path="/allPokemon" element={<AllPokemon />}/>
+        <Route path="/allPokemon/:id" element={<SinglePokemon />}/>
       </Routes>
     </>
   );

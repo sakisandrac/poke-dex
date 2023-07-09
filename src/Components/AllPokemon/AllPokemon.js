@@ -7,6 +7,7 @@ const AllPokemon = () => {
 
   const [allPokemon, setAllPokemon] = useState([]); 
   const [search, setSearch] = useState("");
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     getAllPokemon()
@@ -14,8 +15,13 @@ const AllPokemon = () => {
       console.log(data)
       setAllPokemon(data.results)
     })
-    .catch(err => console.log("error", err))
+    .catch(err => {
+      console.log("error", err)
+      setError(true)
+    })
   }, []);
+
+
 
   const searchPokemon = (e) => {
     const {value} = e.target
