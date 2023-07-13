@@ -3,7 +3,7 @@ import './Dashboard.css';
 import RandomPokemon from '../RandomPokemon/RandomPokemon';
 import Details from '../Details/Details';
 
-const Dashboard = ({savedPokemon, savePokemon, randomPokemon, getNewRandomPokemon, showPokemonDetails}) => {
+const Dashboard = ({savePokemon, randomPokemon, getNewRandomPokemon, showPokemonDetails}) => {
   const [userName, setUserName] = useState('');
 
   const updateUsernameInput = (e) => {
@@ -20,7 +20,6 @@ const Dashboard = ({savedPokemon, savePokemon, randomPokemon, getNewRandomPokemo
         <h1 className='welcome-msg'>{`Welcome, ${userName? userName : 'Pokemon Trainer'}`}!</h1>
       <main className='main-container'>
         <RandomPokemon 
-        savedPokemon={savedPokemon} 
         randomPokemon={randomPokemon} 
         getNewRandomPokemon={getNewRandomPokemon}
         showPokemonDetails={showPokemonDetails}

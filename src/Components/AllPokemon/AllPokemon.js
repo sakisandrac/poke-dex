@@ -12,7 +12,6 @@ const AllPokemon = () => {
   useEffect(() => {
     getAllPokemon()
     .then(data => {
-      console.log(data)
       setAllPokemon(data.results)
     })
     .catch(err => {

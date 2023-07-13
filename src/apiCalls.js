@@ -9,8 +9,21 @@ const getSinglePokemon = (num) => {
     })
     .then(data => {
       console.log(data)
-      return data
+      const newData = cleanUpData(data)
+      console.log('new', newData)
+      return newData
     })
+}
+
+const cleanUpData = (data) => {
+  return {
+    abilities: data.abilities,
+    id: data.id,
+    name: data.name,
+    types: data.types,
+    moves: data.moves,
+    weight: data.weight
+  }
 }
 
 const getAllPokemon = () =>{

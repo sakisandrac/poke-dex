@@ -50,6 +50,7 @@ function App() {
         return prev
       }
     })
+    console.log('saved', savedPokemon)
   }
 
   const getNewRandomPokemon = () => {
@@ -70,6 +71,8 @@ function App() {
     });
   }
 
+  console.log('inapp', randomPokemon)
+
   return (
     <>
       <div className="App">
@@ -79,7 +82,6 @@ function App() {
         <Route path="/" element={
         <Dashboard 
         savePokemon={savePokemon}
-        savedPokemon={savedPokemon}
         randomPokemon={randomPokemon}
         getNewRandomPokemon={getNewRandomPokemon}
         showPokemonDetails={showPokemonDetails}
