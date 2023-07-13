@@ -26,3 +26,15 @@
 .pokemon-num {
   margin: 0;
 }
+
+.saved-img {
+  width: 150px;
+}
+
+@media (max-width: 600px) {
+
+  .saved-img {
+    width: 80px;
+  }
+  
+}

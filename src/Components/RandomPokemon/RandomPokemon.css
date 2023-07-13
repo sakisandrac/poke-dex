@@ -67,5 +67,10 @@
     border-radius: 20px;
     margin-bottom: 10px;
   }
+
+  .random-pokemon-container {
+    border-right: 0;
+    border-bottom: 2px solid #de3519;
+  }
   
 }
