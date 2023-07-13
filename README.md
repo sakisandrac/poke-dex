@@ -11,7 +11,8 @@ React, React router v6, create-react-app, CSS, HTML, JavaScript
 At the time of this project, I am a student at Turing School of Software Engineering in the front end development program, in mod 3. The goal of this project was to practice programming in React, using React router v6, and to explore functionality with React such as being able to favorite and search through elements.
 
 ## Project Preview
-![poke-dex-preview](https://github.com/sakisandrac/poke-dex/assets/118419729/25d60573-fc07-43b6-9093-8864637d06ed)
+![poke-dex-preview](https://github.com/sakisandrac/poke-dex/assets/118419729/3ffe7a04-bf03-4e7f-9c3b-92e713c1fe09)
+
 
 ## Set up
 1. Fork or clone down this respository. 
