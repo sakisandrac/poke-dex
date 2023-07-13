@@ -11,7 +11,6 @@ const SinglePokemon = () => {
   
   useEffect(() => {
     getSinglePokemon(id).then(data => {
-      console.log('in single', data)
       setPokemon(data)
     })
   }, [])

@@ -33,8 +33,24 @@ a:hover {
   .nav-link-container {
     padding-left: 10px;
     display: flex;
-    width: 60%;
+    width: 100%;
     justify-content: space-between;
+  }
+
+  .nav-bar {
+    background-color: #12677b;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    font-family: 'Lilita One', cursive;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px; 
   }
   
 }

@@ -59,3 +59,13 @@
   background-color: #de3519;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .img-container {
+    background-color: #fad027a8;
+    width: 90%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  
+}

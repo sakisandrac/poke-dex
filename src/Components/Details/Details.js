@@ -4,6 +4,7 @@ import './Details.css';
 const Details = ({randomPokemon}) => {
   
   const pokeData = (data) => {
+
     if (data.data) {
       return data.data
     } else {
