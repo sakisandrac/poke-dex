@@ -16,7 +16,7 @@ console.log('saved', savedPokemon)
                 <p className='pokemon-num'>{`No. ${pokemon.number}`}</p>
               </div>
               <Link to={`/allPokemon/${pokemon.number}`}>
-                <img key={pokemon.data.name + "a"} src={pokemon.image} />
+                <img className='saved-img' key={pokemon.data.name + "a"} src={pokemon.image} />
               </Link>
             </article>
         )})}

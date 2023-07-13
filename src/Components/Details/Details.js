@@ -16,7 +16,6 @@ const Details = ({randomPokemon}) => {
     <div className='details-container'>
       <h2 className='random-pokemon-header'>More Details</h2>
       <section className='data-container'>
-        <p>Base Experience: {pokeData(randomPokemon).base_experience}</p>
         <p>Weight: {pokeData(randomPokemon).weight} kg</p>
         <ul className='abilities-header'>Moves:</ul>
         <div className='moves-container'>

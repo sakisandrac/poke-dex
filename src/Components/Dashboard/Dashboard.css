@@ -1,8 +1,5 @@
 .dashboard-container {
   height: 100vh;
-  background-image: url('./background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   text-align: center;
 }
 
@@ -13,6 +10,7 @@
   margin: 0 60px;
   display: flex;
   background-color: #eee8e76d;
+  margin-bottom: 60px;
 }
 
 .username-container {
@@ -29,3 +27,17 @@
   font-family: 'Lilita One', cursive;
 }
 
+
+@media (max-width: 600px) {
+
+  .main-container {
+    border: 6px solid #de3519;
+    border-radius: 15px;
+    height: auto;
+    margin: 0 60px 50px 60px;
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(9, 17%, 92%, 0.427);
+  }
+  
+}
